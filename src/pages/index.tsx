@@ -1,5 +1,9 @@
-import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
+import { Heading } from '@chakra-ui/react'
 import Head from 'next/head'
+
+import { Banner } from '@/components/Banner'
+import { Carousel } from '@/components/Carousel'
+import { TravelType } from '@/components/TravelType'
 
 export default function Home() {
   return (
@@ -7,32 +11,20 @@ export default function Home() {
       <Head>
         <title>worldtrip</title>
       </Head>
-      <Box w="full" position="relative">
-        <Image src="/backgroundBanner.png" alt="" w={'full'} h={'335px'} />
-        <Flex
-          direction={'column'}
-          gap={5}
-          position="absolute"
-          top={'20%'}
-          left={'8%'}
-          zIndex={10}
-        >
-          <Heading color={'#F5F8FA'} fontSize={'4xl'} fontWeight={500}>
-            5 Continentes,
-            <br /> infinitas possibilidades.
-          </Heading>
-          <Text color={'#DADADA'} fontSize={'xl'} maxW={'524px'}>
-            Chegou a hora de tirar do papel a viagem que você sempre sonhou.
-          </Text>
-        </Flex>
-        <Image
-          src="/airplane.svg"
-          alt=""
-          position="absolute"
-          bottom={'-30px'}
-          right={'10%'}
-        />
-      </Box>
+      <Banner />
+      <TravelType />
+      <Heading
+        color={'#47585B'}
+        fontSize="4xl"
+        textAlign={'center'}
+        p="4"
+        mt={13}
+      >
+        Vamos nessa?
+        <br />
+        Então escolha seu continente
+      </Heading>
+      <Carousel />
     </>
   )
 }
