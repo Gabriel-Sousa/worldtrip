@@ -71,7 +71,7 @@ export default function Home() {
     if (query.slug) {
       const loadingData = async () => {
         await api
-          .get(`/continent/${query.slug}`)
+          .get(`api/continent/${query.slug}`)
           .then((response) => setContinent(response.data))
       }
 
