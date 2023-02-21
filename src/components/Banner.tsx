@@ -12,7 +12,7 @@ export function Banner() {
 
   return (
     <Box
-      backgroundImage={'/banner/backgroundbanner.png'}
+      backgroundImage={'/banner/backgroundBanner.png'}
       backgroundSize="cover"
     >
       <Flex
