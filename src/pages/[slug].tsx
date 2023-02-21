@@ -4,6 +4,13 @@ import {
   GridItem,
   Heading,
   Image,
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverHeader,
+  PopoverTrigger,
   SimpleGrid,
   Text,
   useBreakpointValue,
@@ -118,7 +125,7 @@ export default function Home() {
               top={{ base: '50%', lg: '70%' }}
               left={{ base: '50%', lg: '10%' }}
               position="absolute"
-              fontSize={{ base: '3xl', lg: '5xl' }}
+              fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
               fontWeight={600}
               color="#F5F8FA"
               className={isLayoutMobile ? 'text-center' : ''}
@@ -195,13 +202,41 @@ export default function Home() {
                 >
                   {continent.data.cities}
                 </Text>
-                <Text
-                  color={'#47585B'}
-                  fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
-                  textAlign={'center'}
-                >
-                  cidades +100{' '}
-                </Text>
+                <Flex gap="4px">
+                  <Text
+                    color={'#47585B'}
+                    fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
+                    textAlign={'center'}
+                  >
+                    cidades +100
+                  </Text>
+
+                  <Popover>
+                    <PopoverTrigger>
+                      <button>
+                        <Image src="/info.svg" alt="" />
+                      </button>
+                    </PopoverTrigger>
+                    <PopoverContent>
+                      <PopoverArrow />
+                      <PopoverCloseButton />
+                      <PopoverHeader>Cidades</PopoverHeader>
+                      <PopoverBody>
+                        {continent.countries.map((country, i) => {
+                          if (continent.countries.length === i + 1) {
+                            return (
+                              <span key={country.city}>{country.city}. </span>
+                            )
+                          }
+
+                          return (
+                            <span key={country.city}>{country.city}, </span>
+                          )
+                        })}
+                      </PopoverBody>
+                    </PopoverContent>
+                  </Popover>
+                </Flex>
               </Flex>
             </Flex>
           </Flex>
