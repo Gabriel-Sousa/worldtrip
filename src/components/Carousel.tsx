@@ -2,9 +2,42 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-import { Box, Image } from '@chakra-ui/react'
+import { Box, Image, Link, Text } from '@chakra-ui/react'
 import { Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+
+const continents = [
+  {
+    src: 'continents/asia.jpg',
+    url: '/asia',
+    text: 'Ásia',
+  },
+  {
+    src: 'continents/africa.jpg',
+    url: '/africa',
+    text: 'África',
+  },
+  {
+    src: 'continents/north-america.jpg',
+    url: '/america-do-norte',
+    text: 'América do Norte',
+  },
+  {
+    src: 'continents/south-america.jpg',
+    url: '/america-do-sul',
+    text: 'América do Sul',
+  },
+  {
+    src: 'continents/europe.jpg',
+    url: '/europa',
+    text: 'Europa',
+  },
+  {
+    src: 'continents/oceania.jpg',
+    url: '/oceania',
+    text: 'Oceania ',
+  },
+]
 
 export function Carousel() {
   return (
@@ -15,18 +48,25 @@ export function Carousel() {
         pagination={{ clickable: true }}
         className={'sliderCarousel'}
       >
-        <SwiperSlide>
-          <Image src="europe/europe-1.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="europe/europe-2.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="europe/europe-3.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="europe/europe-4.jpg" alt="" />
-        </SwiperSlide>
+        {continents.map((continent) => (
+          <SwiperSlide key={continent.url}>
+            <Link href={continent.url} position="relative">
+              <Image src={continent.src} alt="" brightness={'40%'} />
+              <Text
+                position={'absolute'}
+                top="50%"
+                left={'50%'}
+                className="text-center"
+                zIndex={20}
+                fontSize={{ base: '2xl', md: '3xl', lg: '5xl' }}
+                textAlign="center"
+                color={'#F5F8FA'}
+              >
+                {continent.text}
+              </Text>
+            </Link>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Box>
   )

@@ -1,4 +1,11 @@
-import { Box, Flex, Image, Text } from '@chakra-ui/react'
+import {
+  Box,
+  Center,
+  Flex,
+  Image,
+  Text,
+  useBreakpointValue,
+} from '@chakra-ui/react'
 
 const travelTypes = [
   {
@@ -24,6 +31,99 @@ const travelTypes = [
 ]
 
 export function TravelType() {
+  const isLayoutMobile = useBreakpointValue({ base: true, lg: false })
+
+  if (isLayoutMobile) {
+    return (
+      <Flex
+        direction={'column'}
+        alignItems="center"
+        maxW={'container.xl'}
+        mx="auto"
+        p={4}
+        pt="9"
+        gap={9}
+      >
+        <Flex w={'full'} direction={'column'} gap={6}>
+          <Flex
+            w={'full'}
+            mx={'auto'}
+            alignItems="center"
+            justifyContent={'space-evenly'}
+          >
+            <Flex alignItems={'center'} gap={'8px'}>
+              <Image src={'/travelTypes/dot.svg'} alt="" />
+              <Text
+                fontSize={'lg'}
+                color="#47585B"
+                fontWeight={500}
+                textAlign="center"
+              >
+                vida noturna
+              </Text>
+            </Flex>
+
+            <Flex alignItems={'center'} gap={'8px'}>
+              <Image src={'/travelTypes/dot.svg'} alt="" />
+              <Text
+                fontSize={'lg'}
+                color="#47585B"
+                fontWeight={500}
+                textAlign="center"
+              >
+                praia
+              </Text>
+            </Flex>
+          </Flex>
+
+          <Flex
+            w={'full'}
+            mx={'auto'}
+            alignItems="center"
+            justifyContent={'space-evenly'}
+          >
+            <Flex alignItems={'center'} gap={'8px'}>
+              <Image src={'/travelTypes/dot.svg'} alt="" />
+              <Text
+                fontSize={'lg'}
+                color="#47585B"
+                fontWeight={500}
+                textAlign="center"
+              >
+                moderno
+              </Text>
+            </Flex>
+
+            <Flex alignItems={'center'} gap={'8px'}>
+              <Image src={'/travelTypes/dot.svg'} alt="" />
+              <Text
+                fontSize={'lg'}
+                color="#47585B"
+                fontWeight={500}
+                textAlign="center"
+              >
+                clássico
+              </Text>
+            </Flex>
+          </Flex>
+
+          <Center>
+            <Image src={'/travelTypes/dot.svg'} alt="" mr={'8px'} />
+            <Text
+              fontSize={'lg'}
+              color="#47585B"
+              fontWeight={500}
+              textAlign="center"
+            >
+              e mais...
+            </Text>
+          </Center>
+        </Flex>
+
+        <Box w={128} h={1} bg="#47585B" rounded={'full'} />
+      </Flex>
+    )
+  }
   return (
     <Flex
       direction={'column'}
