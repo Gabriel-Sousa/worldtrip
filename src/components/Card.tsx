@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
+import { CircleFlag } from 'react-circle-flags'
 
 interface CardProps {
   country: {
@@ -12,7 +13,7 @@ interface CardProps {
 export function Card({ country }: CardProps) {
   return (
     <Box maxW={'256px'} rounded={'4px'}>
-      <Image src={country.imageCity} alt="" />
+      <Image src={country.imageCity} alt="" w={'256px'} h={'173px'} />
       <Flex
         justifyContent={'space-between'}
         alignItems={'center'}
@@ -27,7 +28,7 @@ export function Card({ country }: CardProps) {
           <Heading fontSize={'xl'}>{country.city}</Heading>
           <Text>{country.name}</Text>
         </Flex>
-        <Image src={country.flag} alt="" />
+        <CircleFlag countryCode={country.flag} width={33} />
       </Flex>
     </Box>
   )

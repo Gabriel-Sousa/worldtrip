@@ -1,5 +1,22 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+type Continent = {
+  name: string
+  banner: string
+  text: string
+  data: {
+    countries: number
+    language: number
+    cities: number
+  }
+  countries: {
+    city: string
+    name: string
+    imageCity: string
+    flag: string
+  }[]
+}
+
 const continents = [
   {
     name: 'europa',
@@ -16,37 +33,76 @@ const continents = [
         city: 'Londres',
         name: 'Reino Unido',
         imageCity: '/continents/europa/cities/londres.png',
-        flag: '/continents/europa/flag/reino-unido.png',
+        flag: 'gb',
       },
       {
         city: 'Paris',
         name: 'França',
         imageCity: '/continents/europa/cities/paris.png',
-        flag: '/continents/europa/flag/franca.png',
+        flag: 'fr',
       },
       {
         city: 'Roma',
         name: 'Itália',
         imageCity: '/continents/europa/cities/roma.png',
-        flag: '/continents/europa/flag/italia.png',
+        flag: 'it',
       },
       {
         city: 'Praga',
         name: 'República Tcheca',
         imageCity: '/continents/europa/cities/praga.png',
-        flag: '/continents/europa/flag/republica_tcheca.png',
+        flag: 'cz',
       },
       {
         city: 'Amsterdã',
         name: 'Holanda',
         imageCity: '/continents/europa/cities/amsterda.png',
-        flag: '/continents/europa/flag/holanda.png',
+        flag: 'nl',
       },
     ],
   },
-]
+  {
+    name: 'america-do-sul',
+    banner: '/banner/america-do-sul.jpg',
+    text: 'A América do Sul é um continente que compreende a porção meridional da América. Também é considerada um subcontinente do continente americano. A sua extensão é de 17 819 100 km², abrangendo 12% da superfície terrestre e 6% da população mundial. Une-se à América Central a norte pelo istmo do Panamá e se separa da Antártida ao sul pelo estreito de Drake. Tem uma extensão de 7 500 km desde o mar do Caribe até ao cabo Horn, ponto extremo sul do continente.',
+    data: {
+      cities: 50,
+      countries: 31,
+      language: 9,
+    },
+    countries: [
+      {
+        name: 'Brasil',
+        city: 'Rio de Janeiro',
+        flag: 'br',
+        imageCity: '/continents/america-do-sul/cities/rio-de-janeiro.jpg',
+      },
+      {
+        name: 'Brasil',
+        city: 'São Paulo',
+        flag: 'br',
+        imageCity: '/continents/america-do-sul/cities/sao-paulo.jpg',
+      },
+      {
+        name: 'Argentina',
+        city: 'Buenos Aires',
+        flag: 'ar',
+        imageCity: '/continents/america-do-sul/cities/argentina.jpg',
+      },
+      {
+        name: 'Chile',
+        city: 'Santiago',
+        flag: 'cl',
+        imageCity: '/continents/america-do-sul/cities/santiago.jpg',
+      },
+    ],
+  },
+] as Continent[]
 
-export default function Continent(req: NextApiRequest, res: NextApiResponse) {
+export default function ContinentData(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
   if (req.method === 'GET') {
     const { query } = req
 

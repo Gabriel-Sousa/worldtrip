@@ -115,11 +115,19 @@ export default function Home() {
         <Head>
           <title>{title}</title>
         </Head>
-        <Header comeHome />
+        <Header returnHome />
 
         <Box>
           <Box position={'relative'}>
-            <Image src={continent.banner} w="100vw" maxH={'500px'} alt="" />
+            <Image
+              src={continent.banner}
+              brightness={'40%'}
+              objectFit="cover"
+              w="100vw"
+              maxH={'500px'}
+              alt=""
+              className="brightness_40"
+            />
             <Heading
               textTransform={'capitalize'}
               top={{ base: '50%', lg: '70%' }}
@@ -202,7 +210,7 @@ export default function Home() {
                 >
                   {continent.data.cities}
                 </Text>
-                <Flex gap="4px">
+                <Flex gap="6px">
                   <Text
                     color={'#47585B'}
                     fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
@@ -257,7 +265,7 @@ export default function Home() {
               mt="10"
             >
               {continent.countries.map((country) => (
-                <GridItem key={country.name}>
+                <GridItem key={country.city}>
                   <Card country={country} />
                 </GridItem>
               ))}
@@ -273,7 +281,7 @@ export default function Home() {
       <Head>
         <title>{title}</title>
       </Head>
-      <Header comeHome />
+      <Header returnHome />
 
       <Flex
         width={'100vw'}

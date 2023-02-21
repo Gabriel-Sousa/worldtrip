@@ -25,6 +25,9 @@
     fill: #FFBA08 !important;
     stroke: #FFBA08 !important;
 }
+.swiper-pagination-bullet{
+  background-color: red;
+}
 
 .swiper-pagination-bullet-active{
   background: #FFBA08 !important;
@@ -32,4 +35,8 @@
 
 .text-center{
   transform: translate(-50%, -50%);
+}
+
+.brightness_40{
+  filter: brightness(40%);
 }

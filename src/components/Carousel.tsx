@@ -47,11 +47,12 @@ export function Carousel() {
         navigation
         pagination={{ clickable: true }}
         className={'sliderCarousel'}
+        loop
       >
         {continents.map((continent) => (
           <SwiperSlide key={continent.url}>
             <Link href={continent.url} position="relative">
-              <Image src={continent.src} alt="" brightness={'40%'} />
+              <Image src={continent.src} alt="" />
               <Text
                 position={'absolute'}
                 top="50%"
