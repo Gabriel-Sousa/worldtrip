@@ -54,7 +54,7 @@ export function TravelType() {
             <Flex alignItems={'center'} gap={'8px'}>
               <Image src={'/travelTypes/dot.svg'} alt="" />
               <Text
-                fontSize={'lg'}
+                fontSize={{ base: 'lg', md: 'xl' }}
                 color="#47585B"
                 fontWeight={500}
                 textAlign="center"
@@ -66,7 +66,7 @@ export function TravelType() {
             <Flex alignItems={'center'} gap={'8px'}>
               <Image src={'/travelTypes/dot.svg'} alt="" />
               <Text
-                fontSize={'lg'}
+                fontSize={{ base: 'lg', md: 'xl' }}
                 color="#47585B"
                 fontWeight={500}
                 textAlign="center"
@@ -85,7 +85,7 @@ export function TravelType() {
             <Flex alignItems={'center'} gap={'8px'}>
               <Image src={'/travelTypes/dot.svg'} alt="" />
               <Text
-                fontSize={'lg'}
+                fontSize={{ base: 'lg', md: 'xl' }}
                 color="#47585B"
                 fontWeight={500}
                 textAlign="center"
@@ -97,7 +97,7 @@ export function TravelType() {
             <Flex alignItems={'center'} gap={'8px'}>
               <Image src={'/travelTypes/dot.svg'} alt="" />
               <Text
-                fontSize={'lg'}
+                fontSize={{ base: 'lg', md: 'xl' }}
                 color="#47585B"
                 fontWeight={500}
                 textAlign="center"
@@ -110,7 +110,7 @@ export function TravelType() {
           <Center>
             <Image src={'/travelTypes/dot.svg'} alt="" mr={'8px'} />
             <Text
-              fontSize={'lg'}
+              fontSize={{ base: 'lg', md: 'xl' }}
               color="#47585B"
               fontWeight={500}
               textAlign="center"

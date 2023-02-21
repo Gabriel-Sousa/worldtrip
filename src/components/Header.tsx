@@ -13,7 +13,8 @@ export function Header({ comeHome = false }: HeaderProps) {
       alignItems="center"
       maxW={'container.xl'}
       mx="auto"
-      p={'7'}
+      p={{ base: '4', md: '7' }}
+      maxH={{ base: '75px', md: '120px' }}
     >
       {comeHome && (
         <Link href={'/'}>
