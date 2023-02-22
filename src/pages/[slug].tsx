@@ -293,7 +293,11 @@ export default function Home() {
         alignItems={'center'}
       >
         {continent && isLoading ? (
-          <Heading>
+          <Heading
+            p={4}
+            textAlign="center"
+            fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }}
+          >
             Dados não encontrados, volte a página inicial e selecione outro
             continente.
           </Heading>
