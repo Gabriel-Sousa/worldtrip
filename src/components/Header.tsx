@@ -26,7 +26,11 @@ export function Header({ returnHome = false }: HeaderProps) {
         <Box w={'64px'} h={'64px'} />
       )}
       <Image src="/logo.svg" alt="" />
-      {returnHome ? <Box /> : <Box />}
+      {returnHome ? (
+        <Box w={'64px'} h={'64px'} />
+      ) : (
+        <Box w={'64px'} h={'64px'} />
+      )}
     </Flex>
   )
 }
