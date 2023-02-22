@@ -117,7 +117,7 @@ export default function ContinentData(
       res.status(200).json(continent)
     }
 
-    res.status(200).json({ status: 404, message: 'Continent not found' })
+    res.status(201).json({ status: 404, message: 'Continent not found' })
     // res.status(404).end('Not Found')
   } else {
     res.setHeader('Allow', 'GET')
