@@ -297,6 +297,7 @@ export default function Home() {
             p={4}
             textAlign="center"
             fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }}
+            maxW={{ md: '516px', lg: '768px' }}
           >
             Dados não encontrados, volte a página inicial e selecione outro
             continente.
