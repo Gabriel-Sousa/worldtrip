@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Continent = {
+  id: string
   name: string
   banner: string
   text: string
@@ -19,6 +20,7 @@ type Continent = {
 
 const continents = [
   {
+    id: 'europa',
     name: 'europa',
     banner: '/banner/europa.png',
     text: 'A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste',
@@ -62,7 +64,8 @@ const continents = [
     ],
   },
   {
-    name: 'america-do-sul',
+    id: 'america-do-sul',
+    name: 'america do sul',
     banner: '/banner/america-do-sul.jpg',
     text: 'A América do Sul é um continente que compreende a porção meridional da América. Também é considerada um subcontinente do continente americano. A sua extensão é de 17 819 100 km², abrangendo 12% da superfície terrestre e 6% da população mundial. Une-se à América Central a norte pelo istmo do Panamá e se separa da Antártida ao sul pelo estreito de Drake. Tem uma extensão de 7 500 km desde o mar do Caribe até ao cabo Horn, ponto extremo sul do continente.',
     data: {
@@ -107,14 +110,14 @@ export default function ContinentData(
     const { query } = req
 
     const continent = continents.find(
-      (continent) => continent.name === query.slug,
+      (continent) => continent.id === query.slug,
     )
 
     if (continent) {
       res.status(200).json(continent)
     }
 
-    res.status(404)
+    res.status(200).json({ status: 404, message: 'Continent not found' })
     // res.status(404).end('Not Found')
   } else {
     res.setHeader('Allow', 'GET')

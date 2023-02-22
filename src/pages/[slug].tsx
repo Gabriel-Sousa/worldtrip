@@ -25,6 +25,7 @@ import { Header } from '@/components/Header'
 import { api } from '@/services/axios'
 
 type Continent = {
+  id: string
   name: string
   banner: string
   text: string
@@ -46,8 +47,10 @@ export default function Home() {
 
   const router = useRouter()
   const { query } = router
+  let title = query.slug
 
   const [continent, setContinent] = useState<Continent>({} as Continent)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     const continents = [
@@ -70,16 +73,15 @@ export default function Home() {
 
     if (query.slug) {
       const loadingData = async () => {
-        await api
-          .get(`api/continent/${query.slug}`)
-          .then((response) => setContinent(response.data))
+        await api.get(`api/continent/${query.slug}`).then((response) => {
+          setContinent(response.data)
+          response.data.status === 404 && setIsLoading(true)
+        })
       }
 
       loadingData()
     }
   }, [router])
-
-  let title = query.slug
 
   switch (title) {
     case 'asia':
@@ -286,10 +288,18 @@ export default function Home() {
       <Flex
         width={'100vw'}
         height={'90vh'}
+        direction="column"
         justifyContent="center"
         alignItems={'center'}
       >
-        <PulseLoader color="#47585B" size={'2rem'} />
+        {continent && isLoading ? (
+          <Heading>
+            Dados não encontrados, volte a página inicial e selecione outro
+            continente.
+          </Heading>
+        ) : (
+          <PulseLoader color="#47585B" size={'2rem'} />
+        )}
       </Flex>
     </>
   )
