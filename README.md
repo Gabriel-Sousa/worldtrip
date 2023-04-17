@@ -1,38 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  <img alt="WorlTrip" title="WorlTrip" src="https://worldtrip-silk.vercel.app/logo.svg" />
+</h1>
 
-## Getting Started
+<br>
 
-First, run the development server:
+<p align="center">
+  <img alt="WorlTrip" src=".github/worldTrip.png" width="100%">
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## 🚀 Tecnologias
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Tecnologias utilizadas no projeto:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- ReactJS
+- Next
+- Typescript
+- Styled Components
+- Swiper
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<br>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 💻 Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+O WorldTrip é uma aplicação fictícia para mostrar os lugares mais famosos do mundo separados por continente.
 
-## Learn More
+<br>
 
-To learn more about Next.js, take a look at the following resources:
+## ⚒️ Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [x] Carrossel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<br>
 
-## Deploy on Vercel
+## 🔖 Layout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Layout da aplicação no [figma](https://www.figma.com/file/8QAkMs3BddatXn2fFseyu4/Desafio-1-M%C3%B3dulo-4-ReactJS/duplicate).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<br>
+
+## 🌐 Deploy
+
+Você pode ver o site clicando <a href="https://worldtrip-silk.vercel.app/" target="_blank">nesse link</a>.
+
+<br>
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo <a href="https://github.com/Gabriel-Sousa/worldtrip/blob/main/.github/LICENSE" target="_blank">LICENSE</a>  para mais detalhes.
+
+
+
+
+---
+
+Feito com ♥ por Gabriel Sousa
